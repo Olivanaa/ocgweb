@@ -3,12 +3,14 @@ import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { EditForm } from "./EditForm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useParams } from "next/navigation";
 
 
 
 
-export default async function EditarCategoria({ params }: Params) {
-  const { id } = params
+export default async function EditarCategoria() {
+  const { idUser } = useParams(); 
+  const  id = parseInt(idUser);
 
   const usuario: Usuario = await getById(id)
 
