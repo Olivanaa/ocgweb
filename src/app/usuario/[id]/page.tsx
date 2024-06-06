@@ -18,15 +18,13 @@ interface UsuarioProps {
     }
 }
 export default function Usuario() {
-    const { id } = useParams();
-    const idUser = parseInt(id);
+    const { id } = useParams<{ id : string }>();
 
-    console.log(id)
-    console.log(idUser)
+    console.log( id )
  
 
     const [usuario, setUsuario] = useState<UsuarioProps['usuario']>({
-        id: idUser,
+        id: parseInt(id) ,
         nome: "",
         email: "",
         telefone: "",
@@ -36,15 +34,15 @@ export default function Usuario() {
 
     useEffect(() => {  
         const fetchUsuario = async () => {
-            const userData = await getById(idUser);
+            const userData = await getById(parseInt(id));
             console.log(userData);
             setUsuario(userData); 
         };
     
-        if (idUser) {
+        if (parseInt(id)) {
             fetchUsuario();
         }
-    }, [idUser]);
+    }, [parseInt(id)]);
 
     return (
         <main className="bg-[#021922] min-h-screen flex flex-col">
@@ -60,7 +58,7 @@ export default function Usuario() {
                         <Camera color="#ffffff" size={70} />
                         <h2 className="text-xl font-bold mb-4 mt-5">Relato de poluição</h2>
                         <p>Ajude-nos a identificar e combater a poluição marinha.</p>
-                        <Link href= {`/reporte/new/${idUser}`}><button className="bg-[#07799E] text-white border border-transparent px-4 py-2 border-r-4 mt-5">Relatar Poluição</button></Link>
+                        <Link href= {`/reporte/new/${id}`}><button className="bg-[#07799E] text-white border border-transparent px-4 py-2 border-r-4 mt-5">Relatar Poluição</button></Link>
                     </div>
 
                     <div className="bg-[#034752] p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">

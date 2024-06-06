@@ -10,11 +10,10 @@ import { useParams } from "next/navigation";
 
 
 
-export default async function EditarCategoria() {
-  const { idUser } = useParams(); 
-  const  id = parseInt(idUser);
+export default async function EditarPerfil() {
+  const { id  } = useParams<{ id : string }>();
 
-  const usuario: Usuario = await getById(id)
+  const usuario: Usuario = await getById(parseInt(id))
 
   return (
     <>
