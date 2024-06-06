@@ -3,15 +3,15 @@
 import Navbar from "@/components/Navbar";
 import { getEvento } from "../actions/evento/get";
 import Footer from "@/components/Footer";
-import EventoItem from "./EventoItem";
 import { useState, useEffect } from "react";
+import { EventoItem } from "./EventoItem";
 
 
 interface EventoProps{
     eventos: Array<Evento>
 }
 
-export default function Eventos({eventos}: EventoProps) {
+export function Eventos({eventos}: EventoProps) {
     const [eve, setEve] = useState<Array<Evento>>(eventos || []);
 
     useEffect(() => {

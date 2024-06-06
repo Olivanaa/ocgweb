@@ -5,7 +5,7 @@ interface EventoItemProps{
 }
 
 
-export default function EventoItem({evento}: EventoItemProps){
+export function EventoItem({evento}: EventoItemProps){
     return(
         <>
             <div className="bg-[#034752] p-6 rounded-lg shadow-lg flex flex-col mb-4">
