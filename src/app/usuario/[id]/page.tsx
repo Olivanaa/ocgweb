@@ -67,7 +67,7 @@ export default function Usuario() {
                         <CalendarHeart color="#ffffff" size={70} />
                         <h2 className="text-xl font-bold mb-4 mt-3">Eventos de Limpeza</h2>
                         <p>Participe de eventos comunitários de limpeza dos oceanos.</p>
-                        <Link href="/eventos"><button className="bg-[#07799E] text-white border border-transparent px-4 py-2 border-r-4 mt-5">Saiba Mais</button></Link>
+                        <Link href="/#"><button className="bg-[#07799E] text-white border border-transparent px-4 py-2 border-r-4 mt-5">Saiba Mais</button></Link>
                     </div>
                     <div className="bg-[#034752] p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
                         <User color="#ffffff" size={70} />
