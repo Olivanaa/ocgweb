@@ -15,6 +15,7 @@ export async function login(email: string, senha: string) {
             error: "Email ou senha inválidos"
           };
         } else {
+            console.log(process.env.API_BASE_URL)
             console.error(`Unexpected response status: ${response.status}`);
             return { error: "Erro inesperado" };
           }
