@@ -1,3 +1,5 @@
+'use client'
+
 import { getById } from "@/app/actions/usuario/get-by-id";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { EditForm } from "./EditForm";
